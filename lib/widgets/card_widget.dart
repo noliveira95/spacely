@@ -18,7 +18,9 @@ class CardWidget extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return const LearnMorePage();
+              return LearnMorePage(
+                content: content,
+              );
             },
           ),
         );
@@ -41,7 +43,7 @@ class CardWidget extends StatelessWidget {
                 ),
               ),
               Text(
-                content.description ?? 'Learn more about ${content.title}',
+                'Learn more about ${content.title}',
               ),
             ],
           ),
