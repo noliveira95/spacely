@@ -18,6 +18,20 @@ class _LearnMorePageState extends State<LearnMorePage> {
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.content.title),
+          actions: [
+            IconButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      'This is the ${widget.content.title} page',
+                    ),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.info),
+            ),
+          ],
         ),
         body: SingleChildScrollView(
           child: Center(
