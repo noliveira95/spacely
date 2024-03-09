@@ -2,16 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cc/classes/card_class.dart';
 import 'package:flutter_cc/core/constants.dart';
 
-class LearnMorePage extends StatelessWidget {
+class LearnMorePage extends StatefulWidget {
   const LearnMorePage({super.key, required this.content});
 
   final CardClass content;
 
   @override
+  State<LearnMorePage> createState() => _LearnMorePageState();
+}
+
+class _LearnMorePageState extends State<LearnMorePage> {
+  double customFontSize = 16;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(content.title),
+          title: Text(widget.content.title),
         ),
         body: SingleChildScrollView(
           child: Center(
@@ -19,25 +25,61 @@ class LearnMorePage extends StatelessWidget {
               padding: const EdgeInsets.all(kDouble20),
               child: Column(
                 children: [
-                  Image.asset(content.image),
+                  Image.asset(widget.content.image),
                   const SizedBox(
                     height: kDouble40,
                   ),
+                  Wrap(
+                    spacing: kDouble20,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          setState(() {
+                            customFontSize = 16;
+                          });
+                        },
+                        child: const Text('Small Text'),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          setState(() {
+                            customFontSize = 20;
+                          });
+                        },
+                        child: const Text('Medium Text'),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          setState(() {
+                            customFontSize = 24;
+                          });
+                        },
+                        child: const Text('Large Text'),
+                      ),
+                    ],
+                  ),
                   FittedBox(
                     child: Text(
-                      'Learn more about ${content.title}',
+                      'Learn more about ${widget.content.title}',
                       style: const TextStyle(
-                          fontSize: 48, fontWeight: FontWeight.bold),
+                          fontSize: 40, fontWeight: FontWeight.bold),
                     ),
                   ),
                   const SizedBox(
                     height: kDouble20,
                   ),
-                  Text(content.title == 'Rockets'
-                      ? rocketInfo
-                      : content.title == 'Space'
-                          ? spaceInfo
-                          : travelInfo),
+                  Text(
+                    widget.content.title == 'Rockets'
+                        ? rocketInfo
+                        : widget.content.title == 'Space'
+                            ? spaceInfo
+                            : travelInfo,
+                    style: TextStyle(fontSize: customFontSize),
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(
+                    height: kDouble10,
+                  ),
                 ],
               ),
             ),
