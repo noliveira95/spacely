@@ -18,8 +18,7 @@ class HomePage extends StatelessWidget {
           children: [
             CardWidget(
               content: CardClass(
-                title: 'Rocket',
-                description: 'Blast off!',
+                title: 'Rockets',
                 image: 'images/rocket.png',
               ),
             ),
@@ -29,7 +28,6 @@ class HomePage extends StatelessWidget {
                   child: CardWidget(
                     content: CardClass(
                       title: 'Space',
-                      description: 'Zero gravity!',
                       image: 'images/space.png',
                     ),
                   ),
@@ -38,7 +36,6 @@ class HomePage extends StatelessWidget {
                   child: CardWidget(
                     content: CardClass(
                       title: 'Travel',
-                      description: 'See the world!',
                       image: 'images/travel.png',
                     ),
                   ),

@@ -1,10 +1,10 @@
 class CardClass {
   CardClass({
     required this.title,
-    required this.description,
+    this.description,
     required this.image,
   });
   String title;
-  String description;
+  String? description;
   String image;
 }

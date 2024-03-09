@@ -29,7 +29,7 @@ class CardWidget extends StatelessWidget {
               ),
             ),
             Text(
-              content.description,
+              content.description ?? 'Learn more about ${content.title}',
             ),
           ],
         ),
