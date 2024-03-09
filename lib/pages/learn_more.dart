@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cc/models/card_class.dart';
 import 'package:flutter_cc/core/constants.dart';
+import 'package:flutter_cc/models/planet_info.dart';
 
 class LearnMorePage extends StatefulWidget {
   const LearnMorePage({super.key, required this.content});
@@ -92,11 +93,8 @@ class _LearnMorePageState extends State<LearnMorePage> {
                     height: kDouble20,
                   ),
                   Text(
-                    widget.content.title == 'Rockets'
-                        ? rocketInfo
-                        : widget.content.title == 'Space'
-                            ? spaceInfo
-                            : travelInfo,
+                    planetInfo[widget.content.title.toLowerCase()]!.description,
+                    // 'This is the description of ${widget.content.title}',
                     style: TextStyle(fontSize: customFontSize),
                     textAlign: TextAlign.justify,
                   ),
