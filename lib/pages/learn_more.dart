@@ -18,6 +18,15 @@ class _LearnMorePageState extends State<LearnMorePage> {
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.content.title),
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.chevron_left,
+              size: 32,
+            ),
+          ),
           actions: [
             IconButton(
               onPressed: () {
