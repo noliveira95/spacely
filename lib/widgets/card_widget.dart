@@ -36,7 +36,18 @@ class CardWidget extends StatelessWidget {
           width: double.infinity,
           child: Column(
             children: [
-              Image.asset(content.image),
+              Padding(
+                padding:
+                    const EdgeInsets.only(top: kDouble10, bottom: kDouble20),
+                child: SizedBox(
+                  width: 148,
+                  height: 148,
+                  child: Image.asset(
+                    content.image,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
               Text(
                 content.title,
                 style: const TextStyle(

@@ -18,39 +18,85 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CardWidget(
-              content: CardClass(
-                title: 'Rockets',
-                image: 'images/rocket.png',
-              ),
+            Row(
+              children: [
+                Expanded(
+                  child: CardWidget(
+                    content: CardClass(
+                      title: 'Mercury',
+                      image: 'images/mercury.png',
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: CardWidget(
+                    content: CardClass(
+                      title: 'Venus',
+                      image: 'images/venus.png',
+                    ),
+                  ),
+                ),
+              ],
             ),
             Row(
               children: [
                 Expanded(
                   child: CardWidget(
                     content: CardClass(
-                      title: 'Space',
-                      image: 'images/space.png',
+                      title: 'Earth',
+                      image: 'images/earth.png',
                     ),
                   ),
                 ),
                 Expanded(
                   child: CardWidget(
                     content: CardClass(
-                      title: 'Travel',
-                      image: 'images/travel.png',
+                      title: 'Mars',
+                      image: 'images/mars.png',
                     ),
                   ),
                 ),
               ],
             ),
-            CardWidget(
-              content: CardClass(
-                title: 'Yeah!',
-                description: 'Yeah buddy!',
-                image: 'images/yeah.png',
-                isClickable: false,
-              ),
+            Row(
+              children: [
+                Expanded(
+                  child: CardWidget(
+                    content: CardClass(
+                      title: 'Jupiter',
+                      image: 'images/jupiter.png',
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: CardWidget(
+                    content: CardClass(
+                      title: 'Saturn',
+                      image: 'images/saturn.png',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: CardWidget(
+                    content: CardClass(
+                      title: 'Uranus',
+                      image: 'images/uranus.png',
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: CardWidget(
+                    content: CardClass(
+                      title: 'Neptune',
+                      image: 'images/neptune.png',
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
