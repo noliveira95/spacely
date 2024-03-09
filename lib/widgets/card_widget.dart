@@ -14,16 +14,18 @@ class CardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return LearnMorePage(
-                content: content,
-              );
-            },
-          ),
-        );
+        content.isClickable
+            ? Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return LearnMorePage(
+                      content: content,
+                    );
+                  },
+                ),
+              )
+            : null;
       },
       child: Card(
         child: Container(
@@ -43,7 +45,7 @@ class CardWidget extends StatelessWidget {
                 ),
               ),
               Text(
-                'Learn more about ${content.title}',
+                content.description ?? 'Learn more about ${content.title}',
               ),
             ],
           ),

@@ -33,7 +33,11 @@ class LearnMorePage extends StatelessWidget {
                   const SizedBox(
                     height: kDouble20,
                   ),
-                  Text(content.description ?? 'Coming soon!'),
+                  Text(content.title == 'Rockets'
+                      ? rocketInfo
+                      : content.title == 'Space'
+                          ? spaceInfo
+                          : travelInfo),
                 ],
               ),
             ),

@@ -47,6 +47,7 @@ class HomePage extends StatelessWidget {
                 title: 'Yeah!',
                 description: 'Yeah buddy!',
                 image: 'images/yeah.png',
+                isClickable: false,
               ),
             ),
           ],
