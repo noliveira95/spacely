@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cc/classes/card_class.dart';
+import 'package:flutter_cc/models/card_class.dart';
 import 'package:flutter_cc/core/constants.dart';
 import 'package:flutter_cc/pages/learn_more.dart';
 
