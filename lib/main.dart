@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cc/pages/home.dart';
 import 'package:flutter_cc/widget_tree.dart';
 
 void main() {

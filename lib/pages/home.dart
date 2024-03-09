@@ -8,15 +8,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: FloatingActionButton(
-          onPressed: () {
-            debugPrint('Calendar button pressed');
-          },
-          child: const Icon(Icons.calendar_month),
-        ),
-      ),
       appBar: AppBar(
         title: const Text(
           'Spacely',
