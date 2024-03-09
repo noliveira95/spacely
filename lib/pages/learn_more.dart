@@ -14,6 +14,7 @@ class LearnMorePage extends StatefulWidget {
 
 class _LearnMorePageState extends State<LearnMorePage> {
   double customFontSize = 16;
+  Icon favoriteIcon = const Icon(Icons.favorite_border);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +40,7 @@ class _LearnMorePageState extends State<LearnMorePage> {
                   ),
                 );
               },
-              icon: const Icon(Icons.info),
+              icon: const Icon(Icons.favorite_border),
             ),
           ],
         ),
