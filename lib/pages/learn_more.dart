@@ -46,8 +46,13 @@ class _LearnMorePageState extends State<LearnMorePage> {
                           .addFavorite(widget.content.title.toLowerCase());
                     }
                   },
-                  icon:
-                      Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
+                  icon: Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: Icon(
+                      isFavorite ? Icons.favorite : Icons.favorite_border,
+                      color: isFavorite ? Colors.red : Colors.grey,
+                    ),
+                  ),
                 );
               },
             ),
