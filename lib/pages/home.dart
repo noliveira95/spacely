@@ -18,8 +18,10 @@ class HomePage extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        title:
-            const Text('Flutter Demo', style: TextStyle(color: Colors.white)),
+        title: const Text(
+          'Spacely',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.indigo,
       ),
       body: SingleChildScrollView(
