@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cc/models/card_class.dart';
 import 'package:flutter_cc/widgets/card_widget.dart';
+import 'package:flutter_cc/models/planet_info.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -23,36 +24,16 @@ class HomePage extends StatelessWidget {
                 Expanded(
                   child: CardWidget(
                     content: CardClass(
-                      title: 'Mercury',
-                      image: 'images/mercury.png',
+                      title: planetInfo['mercury']!.name,
+                      image: planetInfo['mercury']!.image,
                     ),
                   ),
                 ),
                 Expanded(
                   child: CardWidget(
                     content: CardClass(
-                      title: 'Venus',
-                      image: 'images/venus.png',
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: CardWidget(
-                    content: CardClass(
-                      title: 'Earth',
-                      image: 'images/earth.png',
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: CardWidget(
-                    content: CardClass(
-                      title: 'Mars',
-                      image: 'images/mars.png',
+                      title: planetInfo['venus']!.name,
+                      image: planetInfo['venus']!.image,
                     ),
                   ),
                 ),
@@ -63,16 +44,16 @@ class HomePage extends StatelessWidget {
                 Expanded(
                   child: CardWidget(
                     content: CardClass(
-                      title: 'Jupiter',
-                      image: 'images/jupiter.png',
+                      title: planetInfo['earth']!.name,
+                      image: planetInfo['earth']!.image,
                     ),
                   ),
                 ),
                 Expanded(
                   child: CardWidget(
                     content: CardClass(
-                      title: 'Saturn',
-                      image: 'images/saturn.png',
+                      title: planetInfo['mars']!.name,
+                      image: planetInfo['mars']!.image,
                     ),
                   ),
                 ),
@@ -83,16 +64,36 @@ class HomePage extends StatelessWidget {
                 Expanded(
                   child: CardWidget(
                     content: CardClass(
-                      title: 'Uranus',
-                      image: 'images/uranus.png',
+                      title: planetInfo['jupiter']!.name,
+                      image: planetInfo['jupiter']!.image,
                     ),
                   ),
                 ),
                 Expanded(
                   child: CardWidget(
                     content: CardClass(
-                      title: 'Neptune',
-                      image: 'images/neptune.png',
+                      title: planetInfo['saturn']!.name,
+                      image: planetInfo['saturn']!.image,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: CardWidget(
+                    content: CardClass(
+                      title: planetInfo['uranus']!.name,
+                      image: planetInfo['uranus']!.image,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: CardWidget(
+                    content: CardClass(
+                      title: planetInfo['neptune']!.name,
+                      image: planetInfo['neptune']!.image,
                     ),
                   ),
                 ),
