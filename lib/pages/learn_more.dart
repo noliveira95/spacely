@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cc/models/card_class.dart';
 import 'package:flutter_cc/core/constants.dart';
 import 'package:flutter_cc/models/planet_info.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_cc/models/favorites_model.dart';
 
 class LearnMorePage extends StatefulWidget {
   const LearnMorePage({super.key, required this.content});
@@ -30,17 +32,24 @@ class _LearnMorePageState extends State<LearnMorePage> {
             ),
           ),
           actions: [
-            IconButton(
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                      'This is the ${widget.content.title} page',
-                    ),
-                  ),
+            Consumer<FavoritesModel>(
+              builder: (context, favoritesModel, child) {
+                bool isFavorite = favoritesModel.favorites
+                    .contains(widget.content.title.toLowerCase());
+                return IconButton(
+                  onPressed: () {
+                    if (isFavorite) {
+                      favoritesModel
+                          .removeFavorite(widget.content.title.toLowerCase());
+                    } else {
+                      favoritesModel
+                          .addFavorite(widget.content.title.toLowerCase());
+                    }
+                  },
+                  icon:
+                      Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
                 );
               },
-              icon: const Icon(Icons.favorite_border),
             ),
           ],
         ),

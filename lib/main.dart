@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cc/widget_tree.dart';
+import 'package:provider/provider.dart';
+import 'models/favorites_model.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => FavoritesModel(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
