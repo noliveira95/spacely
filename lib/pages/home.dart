@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cc/core/constants.dart';
-import 'package:flutter_cc/widgets/planet_card.dart';
+import 'package:flutter_cc/widgets/planet_row.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,30 +20,18 @@ class HomePage extends StatelessWidget {
           padding: EdgeInsets.all(kDouble10),
           child: Column(
             children: [
-              Row(
-                children: [
-                  PlanetCard(planetName: 'mercury'),
-                  PlanetCard(planetName: 'venus'),
-                ],
+              PlanetRow(
+                planets: ['mercury', 'venus'],
               ),
-              Row(
-                children: [
-                  PlanetCard(planetName: 'earth'),
-                  PlanetCard(planetName: 'mars'),
-                ],
+              PlanetRow(
+                planets: ['earth', 'mars'],
               ),
-              Row(
-                children: [
-                  PlanetCard(planetName: 'jupiter'),
-                  PlanetCard(planetName: 'saturn'),
-                ],
+              PlanetRow(
+                planets: ['jupiter', 'saturn'],
               ),
-              Row(
-                children: [
-                  PlanetCard(planetName: 'uranus'),
-                  PlanetCard(planetName: 'neptune'),
-                ],
-              )
+              PlanetRow(
+                planets: ['uranus', 'neptune'],
+              ),
             ],
           ),
         ),
