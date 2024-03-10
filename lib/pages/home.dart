@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cc/core/constants.dart';
-import 'package:flutter_cc/models/card_class.dart';
-import 'package:flutter_cc/widgets/card_widget.dart';
-import 'package:flutter_cc/models/planet_info.dart';
 import 'package:flutter_cc/widgets/planet_card.dart';
 
 class HomePage extends StatelessWidget {
