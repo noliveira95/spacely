@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cc/models/card_class.dart';
 import 'package:flutter_cc/core/constants.dart';
 import 'package:flutter_cc/models/planet_info.dart';
+import 'package:flutter_cc/widgets/settings_menu.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_cc/models/favorites_model.dart';
 
@@ -35,14 +36,12 @@ class _LearnMorePageState extends State<LearnMorePage> {
           actions: [
             Padding(
               padding: const EdgeInsets.only(right: 8.0),
-              child: IconButton(
-                onPressed: () {
-                  debugPrint('pressed');
+              child: SettingsMenu(
+                onFontSizeChanged: (double fontSize) {
+                  setState(() {
+                    infoFontSize = fontSize;
+                  });
                 },
-                icon: const Icon(
-                  Icons.settings,
-                  size: 32,
-                ),
               ),
             ),
           ],
