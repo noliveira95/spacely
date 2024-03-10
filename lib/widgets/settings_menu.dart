@@ -33,13 +33,13 @@ class _SettingsMenuState extends State<SettingsMenu> {
           );
         },
         menuChildren: List.generate(3, (index) {
-          return PopupMenuItem(
+          return MenuItemButton(
             child: Text(index == 0
                 ? "Small Text"
                 : index == 1
                     ? "Medium Text"
                     : "Large Text"),
-            onTap: () {
+            onPressed: () {
               widget.onFontSizeChanged(index * 4 + 16);
             },
           );

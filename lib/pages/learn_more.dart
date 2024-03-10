@@ -56,35 +56,6 @@ class _LearnMorePageState extends State<LearnMorePage> {
                   const SizedBox(
                     height: kDouble40,
                   ),
-                  Wrap(
-                    spacing: kDouble20,
-                    children: [
-                      TextButton(
-                        onPressed: () {
-                          setState(() {
-                            infoFontSize = 16;
-                          });
-                        },
-                        child: const Text('Small Text'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          setState(() {
-                            infoFontSize = 20;
-                          });
-                        },
-                        child: const Text('Medium Text'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          setState(() {
-                            infoFontSize = 24;
-                          });
-                        },
-                        child: const Text('Large Text'),
-                      ),
-                    ],
-                  ),
                   FittedBox(
                     child: Row(
                       children: [
