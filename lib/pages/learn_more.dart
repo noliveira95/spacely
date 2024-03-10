@@ -32,32 +32,20 @@ class _LearnMorePageState extends State<LearnMorePage> {
               size: 32,
             ),
           ),
-          // actions: [
-          //   Consumer<FavoritesModel>(
-          //     builder: (context, favoritesModel, child) {
-          //       bool isFavorite = favoritesModel.favorites
-          //           .contains(widget.content.title.toLowerCase());
-          //       return IconButton(
-          //         onPressed: () {
-          //           if (isFavorite) {
-          //             favoritesModel
-          //                 .removeFavorite(widget.content.title.toLowerCase());
-          //           } else {
-          //             favoritesModel
-          //                 .addFavorite(widget.content.title.toLowerCase());
-          //           }
-          //         },
-          //         icon: Padding(
-          //           padding: const EdgeInsets.only(right: 8.0),
-          //           child: Icon(
-          //             isFavorite ? Icons.favorite : Icons.favorite_border,
-          //             color: isFavorite ? Colors.red : Colors.grey,
-          //           ),
-          //         ),
-          //       );
-          //     },
-          //   ),
-          // ],
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: IconButton(
+                onPressed: () {
+                  debugPrint('pressed');
+                },
+                icon: const Icon(
+                  Icons.settings,
+                  size: 32,
+                ),
+              ),
+            ),
+          ],
         ),
         body: SingleChildScrollView(
           child: Center(
