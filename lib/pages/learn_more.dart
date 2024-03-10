@@ -15,7 +15,8 @@ class LearnMorePage extends StatefulWidget {
 }
 
 class _LearnMorePageState extends State<LearnMorePage> {
-  double customFontSize = 16;
+  double infoFontSize = 16;
+  double titleFontSize = 32;
   Icon favoriteIcon = const Icon(Icons.favorite_border);
   @override
   Widget build(BuildContext context) {
@@ -31,32 +32,32 @@ class _LearnMorePageState extends State<LearnMorePage> {
               size: 32,
             ),
           ),
-          actions: [
-            Consumer<FavoritesModel>(
-              builder: (context, favoritesModel, child) {
-                bool isFavorite = favoritesModel.favorites
-                    .contains(widget.content.title.toLowerCase());
-                return IconButton(
-                  onPressed: () {
-                    if (isFavorite) {
-                      favoritesModel
-                          .removeFavorite(widget.content.title.toLowerCase());
-                    } else {
-                      favoritesModel
-                          .addFavorite(widget.content.title.toLowerCase());
-                    }
-                  },
-                  icon: Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: Icon(
-                      isFavorite ? Icons.favorite : Icons.favorite_border,
-                      color: isFavorite ? Colors.red : Colors.grey,
-                    ),
-                  ),
-                );
-              },
-            ),
-          ],
+          // actions: [
+          //   Consumer<FavoritesModel>(
+          //     builder: (context, favoritesModel, child) {
+          //       bool isFavorite = favoritesModel.favorites
+          //           .contains(widget.content.title.toLowerCase());
+          //       return IconButton(
+          //         onPressed: () {
+          //           if (isFavorite) {
+          //             favoritesModel
+          //                 .removeFavorite(widget.content.title.toLowerCase());
+          //           } else {
+          //             favoritesModel
+          //                 .addFavorite(widget.content.title.toLowerCase());
+          //           }
+          //         },
+          //         icon: Padding(
+          //           padding: const EdgeInsets.only(right: 8.0),
+          //           child: Icon(
+          //             isFavorite ? Icons.favorite : Icons.favorite_border,
+          //             color: isFavorite ? Colors.red : Colors.grey,
+          //           ),
+          //         ),
+          //       );
+          //     },
+          //   ),
+          // ],
         ),
         body: SingleChildScrollView(
           child: Center(
@@ -74,7 +75,7 @@ class _LearnMorePageState extends State<LearnMorePage> {
                       TextButton(
                         onPressed: () {
                           setState(() {
-                            customFontSize = 16;
+                            infoFontSize = 16;
                           });
                         },
                         child: const Text('Small Text'),
@@ -82,7 +83,7 @@ class _LearnMorePageState extends State<LearnMorePage> {
                       TextButton(
                         onPressed: () {
                           setState(() {
-                            customFontSize = 20;
+                            infoFontSize = 20;
                           });
                         },
                         child: const Text('Medium Text'),
@@ -90,7 +91,7 @@ class _LearnMorePageState extends State<LearnMorePage> {
                       TextButton(
                         onPressed: () {
                           setState(() {
-                            customFontSize = 24;
+                            infoFontSize = 24;
                           });
                         },
                         child: const Text('Large Text'),
@@ -98,10 +99,45 @@ class _LearnMorePageState extends State<LearnMorePage> {
                     ],
                   ),
                   FittedBox(
-                    child: Text(
-                      'Learn more about ${widget.content.title}',
-                      style: const TextStyle(
-                          fontSize: 40, fontWeight: FontWeight.bold),
+                    child: Row(
+                      children: [
+                        Text(
+                          widget.content.title,
+                          style: TextStyle(
+                            fontSize: titleFontSize,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        Consumer<FavoritesModel>(
+                          builder: (context, favoritesModel, child) {
+                            bool isFavorite = favoritesModel.favorites
+                                .contains(widget.content.title.toLowerCase());
+                            return IconButton(
+                              onPressed: () {
+                                if (isFavorite) {
+                                  favoritesModel.removeFavorite(
+                                    widget.content.title.toLowerCase(),
+                                  );
+                                } else {
+                                  favoritesModel.addFavorite(
+                                    widget.content.title.toLowerCase(),
+                                  );
+                                }
+                              },
+                              icon: Icon(
+                                isFavorite
+                                    ? Icons.favorite
+                                    : Icons.favorite_border,
+                                color: isFavorite ? Colors.red : Colors.grey,
+                                size: 32,
+                              ),
+                            );
+                          },
+                        ),
+                      ],
                     ),
                   ),
                   const SizedBox(
@@ -110,7 +146,7 @@ class _LearnMorePageState extends State<LearnMorePage> {
                   Text(
                     planetInfo[widget.content.title.toLowerCase()]!.description,
                     // 'This is the description of ${widget.content.title}',
-                    style: TextStyle(fontSize: customFontSize),
+                    style: TextStyle(fontSize: infoFontSize),
                     textAlign: TextAlign.justify,
                   ),
                   const SizedBox(
