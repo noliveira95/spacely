@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cc/pages/favorites.dart';
-import 'package:flutter_cc/pages/home.dart';
+import 'package:spacely/pages/favorites.dart';
+import 'package:spacely/pages/home.dart';
 
 class WidgetTree extends StatefulWidget {
   const WidgetTree({super.key});

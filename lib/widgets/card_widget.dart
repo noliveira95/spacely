@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cc/models/card_class.dart';
-import 'package:flutter_cc/core/constants.dart';
-import 'package:flutter_cc/pages/learn_more.dart';
+import 'package:spacely/models/card_class.dart';
+import 'package:spacely/core/constants.dart';
+import 'package:spacely/pages/learn_more.dart';
 
 class CardWidget extends StatelessWidget {
   const CardWidget({

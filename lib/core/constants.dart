@@ -1,4 +1,4 @@
-import 'package:flutter_cc/models/planet_class.dart';
+import 'package:spacely/models/planet_class.dart';
 
 const double kDouble5 = 5.0;
 const double kDouble10 = 10.0;

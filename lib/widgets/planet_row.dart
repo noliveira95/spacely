@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cc/widgets/planet_card.dart';
+import 'package:spacely/widgets/planet_card.dart';
 
 class PlanetRow extends StatelessWidget {
   const PlanetRow({super.key, required this.planets});

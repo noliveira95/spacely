@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cc/core/constants.dart';
-import 'package:flutter_cc/widgets/planet_row.dart';
+import 'package:spacely/core/constants.dart';
+import 'package:spacely/widgets/planet_row.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cc/models/card_class.dart';
-import 'package:flutter_cc/core/constants.dart';
-import 'package:flutter_cc/models/planet_info.dart';
-import 'package:flutter_cc/widgets/settings_menu.dart';
+import 'package:spacely/models/card_class.dart';
+import 'package:spacely/core/constants.dart';
+import 'package:spacely/models/planet_info.dart';
+import 'package:spacely/widgets/settings_menu.dart';
+import 'package:spacely/models/favorites_model.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_cc/models/favorites_model.dart';
 
 class LearnMorePage extends StatefulWidget {
   const LearnMorePage({super.key, required this.content});

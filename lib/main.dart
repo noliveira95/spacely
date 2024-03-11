@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cc/widget_tree.dart';
+import 'package:spacely/widget_tree.dart';
 import 'package:provider/provider.dart';
 import 'models/favorites_model.dart';
 

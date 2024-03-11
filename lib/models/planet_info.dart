@@ -1,5 +1,5 @@
-import 'package:flutter_cc/core/constants.dart';
-import 'package:flutter_cc/models/planet_class.dart';
+import 'package:spacely/core/constants.dart';
+import 'package:spacely/models/planet_class.dart';
 
 final Map<String, Planet> planetInfo = {
   'mercury': mercury,
