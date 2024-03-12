@@ -4,6 +4,7 @@ import 'package:spacely/core/constants.dart';
 import 'package:spacely/models/planet_info.dart';
 import 'package:spacely/widgets/settings_menu.dart';
 import 'package:spacely/models/favorites_model.dart';
+import 'package:spacely/widgets/planet_data_table.dart';
 import 'package:provider/provider.dart';
 
 class LearnMorePage extends StatefulWidget {
@@ -108,7 +109,13 @@ class _LearnMorePageState extends State<LearnMorePage> {
                     textAlign: TextAlign.justify,
                   ),
                   const SizedBox(
-                    height: kDouble10,
+                    height: kDouble20,
+                  ),
+                  FittedBox(
+                    child: PlanetDataTable(
+                      planet: planetInfo[widget.content.title.toLowerCase()]!,
+                      fontSize: infoFontSize,
+                    ),
                   ),
                 ],
               ),
