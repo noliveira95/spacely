@@ -20,11 +20,14 @@ class _LearnMorePageState extends State<LearnMorePage> {
   double infoFontSize = 16;
   double titleFontSize = 32;
   Icon favoriteIcon = const Icon(Icons.favorite_border);
+
   @override
   Widget build(BuildContext context) {
+    String planetName = widget.content.title;
+
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.content.title),
+          title: Text(planetName),
           leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -61,7 +64,7 @@ class _LearnMorePageState extends State<LearnMorePage> {
                     child: Row(
                       children: [
                         Text(
-                          widget.content.title,
+                          planetName,
                           style: TextStyle(
                             fontSize: titleFontSize,
                             fontWeight: FontWeight.bold,
@@ -73,16 +76,16 @@ class _LearnMorePageState extends State<LearnMorePage> {
                         Consumer<FavoritesModel>(
                           builder: (context, favoritesModel, child) {
                             bool isFavorite = favoritesModel.favorites
-                                .contains(widget.content.title.toLowerCase());
+                                .contains(planetName.toLowerCase());
                             return IconButton(
                               onPressed: () {
                                 if (isFavorite) {
                                   favoritesModel.removeFavorite(
-                                    widget.content.title.toLowerCase(),
+                                    planetName.toLowerCase(),
                                   );
                                 } else {
                                   favoritesModel.addFavorite(
-                                    widget.content.title.toLowerCase(),
+                                    planetName.toLowerCase(),
                                   );
                                 }
                               },
@@ -103,8 +106,8 @@ class _LearnMorePageState extends State<LearnMorePage> {
                     height: kDouble20,
                   ),
                   Text(
-                    planetInfo[widget.content.title.toLowerCase()]!.description,
-                    // 'This is the description of ${widget.content.title}',
+                    planetInfo[planetName.toLowerCase()]!.description,
+                    // 'This is the description of ${planetName}',
                     style: TextStyle(fontSize: infoFontSize),
                     textAlign: TextAlign.justify,
                   ),
@@ -113,7 +116,7 @@ class _LearnMorePageState extends State<LearnMorePage> {
                   ),
                   FittedBox(
                     child: PlanetDataTable(
-                      planet: planetInfo[widget.content.title.toLowerCase()]!,
+                      planet: planetInfo[planetName.toLowerCase()]!,
                       fontSize: infoFontSize,
                     ),
                   ),
